@@ -1,0 +1,23 @@
+{
+  "name": "SampleNodeJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eszeto831/SampleNodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eszeto831/SampleNodeJS/issues"
+  },
+  "homepage": "https://github.com/eszeto831/SampleNodeJS#readme",
+  "scripts": {
+    "start": "node server/index.js"
+  }
+}

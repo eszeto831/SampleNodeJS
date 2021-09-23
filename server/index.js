@@ -16,7 +16,7 @@ db = mysql.createConnection({
 
 // make server object that contain port property and the value for our server.
 var server = {
-  port: 4040
+  port: process.env.PORT || 3001
 };
 
 app.get("/api", (req, res) => {

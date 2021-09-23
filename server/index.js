@@ -19,6 +19,10 @@ var server = {
   port: 4040
 };
 
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
 // routers
 const usersRouter = require('./routes/users');
 // use the modules

@@ -29,8 +29,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="gameDataGridDisplayDiv">
+          <div className="gameDataHeader">Users</div>
+          <div className="gameDataHeader">Game Data</div>
           <div className="scrollListDiv">
-            {!users ? "" : 
+            {!users ? " " : 
               users.map((value, index) => {
                 return <UserListItem userid={value.userid} username={value.username} onClick={() => {
                   setCurrentUserGameData(null)

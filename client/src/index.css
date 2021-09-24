@@ -15,17 +15,34 @@ code {
 div.scrollListDiv {
   background-color: lightblue;
   overflow: auto;
+  height: 300px;
 }
 
 div.gameDataItemDiv {
   background-color: lightblue;
   overflow: auto;
+  padding: 5px;
+  color: black
+}
+
+div.gameDataDisplayDiv {
+  font-weight: bold;
+  font-size: 80%;
+  text-align: left;
+}
+
+div.gameDataHeader {
+  font-weight: bold;
+  height: 20px;
 }
 
 div.gameDataGridDisplayDiv {
     display: grid;
     grid-template-columns: 2fr 5fr;
     grid-gap: 20px;
-    height: 300px;
     padding: 20px;
+}
+
+button.userListItemDiv {
+  width: 90%;
 }

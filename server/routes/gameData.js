@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 
 // get user lists
 router.get('/:userId', function(req, res) {
-  let sql = `SELECT * FROM GameData WHERE userid=`+req.params.userId;
+  let sql = `SELECT * FROM GameData WHERE userid=`+req.params.userId+` LIMIT 1`;
   db.query(sql, function(err, data, fields) {
     if (err)
     {

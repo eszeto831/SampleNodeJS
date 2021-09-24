@@ -9,7 +9,8 @@ import UserListItem from "./components/UserListItem.js"
 function App() {
   const [data, setData] = React.useState(null);
   const [users, setUsers] = React.useState(null);
-  const [currentUserId, setCurrentUser] = React.useState(null);
+  const [currentUserGameData, setCurrentUserGameData] = React.useState(null);
+  const [currentUserGameDataLoading, setCurrentUserGameDataLoading] = React.useState(false);
 
   React.useEffect(() => {
     fetch("/api")
@@ -31,11 +32,18 @@ function App() {
           <div className="scrollListDiv">
             {!users ? "" : 
               users.map((value, index) => {
-                return <UserListItem userid={value.userid} username={value.username} onClick={() => setCurrentUser(value.userid)}/>
+                return <UserListItem userid={value.userid} username={value.username} onClick={() => {
+                  setCurrentUserGameData(null)
+                  setCurrentUserGameDataLoading(true);
+                  fetch("/api/gamedata/"+value.userid)
+                    .then((res) => res.json())
+                    .then((data) => setCurrentUserGameData(data.data[0]));
+                }
+              }/>
               })
             }
           </div>
-          <GameDataItem userid={currentUserId}/>
+          <GameDataItem loadingData={currentUserGameDataLoading} currentUserGameData={currentUserGameData}/>
         </div>
         <p>{!data ? "Loading..." : data}</p>
       </header>

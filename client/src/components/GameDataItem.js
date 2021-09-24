@@ -4,7 +4,7 @@ class GameDataItem extends React.Component {
   render() {
     return (
       <div className="gameDataItemDiv">
-        hello world data
+        {!this.props.userid ? "" : "userid: "+this.props.userid}
       </div>
     );
   }

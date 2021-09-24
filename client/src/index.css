@@ -14,21 +14,26 @@ code {
 
 div.scrollListDiv {
   background-color: lightblue;
+  border-radius: 5px;
   overflow: auto;
   height: 300px;
 }
 
 div.gameDataItemDiv {
   background-color: lightblue;
+  border-radius: 5px;
   overflow: auto;
   padding: 5px;
   color: black
 }
 
 div.gameDataDisplayDiv {
-  font-weight: bold;
   font-size: 80%;
   text-align: left;
+}
+
+span.gameDataDisplayBold {
+  font-weight: bold;
 }
 
 div.gameDataHeader {

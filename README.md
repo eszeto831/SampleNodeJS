@@ -1,4 +1,5 @@
 # SampleNodeJS
+Full Stack example using NodeJS, MySQL, React
 
 ## Frontend URL
 https://nodejstest-326900.uc.r.appspot.com/

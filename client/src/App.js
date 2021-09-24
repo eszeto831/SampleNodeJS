@@ -12,14 +12,16 @@ function App() {
   const [currentUserGameData, setCurrentUserGameData] = React.useState(null);
   const [currentUserGameDataLoading, setCurrentUserGameDataLoading] = React.useState(false);
 
+  const api_url = "https://nodejstest-326900.uc.r.appspot.com";
+
   React.useEffect(() => {
-    fetch("/api")
+    fetch(api_url+"/api")
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
 
   React.useEffect(() => {
-    fetch("/api/users/list")
+    fetch(api_url+"/api/users/list")
       .then((res) => res.json())
       .then((data) => setUsers(data.data));
   }, []);
@@ -37,7 +39,7 @@ function App() {
                 return <UserListItem userid={value.userid} username={value.username} onClick={() => {
                   setCurrentUserGameData(null)
                   setCurrentUserGameDataLoading(true);
-                  fetch("/api/gamedata/"+value.userid)
+                  fetch(api_url+"/api/gamedata/"+value.userid)
                     .then((res) => res.json())
                     .then((data) => setCurrentUserGameData(data.data[0]));
                 }

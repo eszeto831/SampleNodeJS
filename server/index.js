@@ -1,5 +1,6 @@
 // server/index.js
 
+const path = require('path');
 const express = require('express'),
   app = express(),
   mysql = require('mysql'), // import mysql module
@@ -32,5 +33,13 @@ app.use(bodyParser.json());
 // use router
 app.use('/api/users', usersRouter);
 app.use('/api/gameData', gameDataRouter);
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 app.listen( server.port , () => console.log(`Server started, listening on port: ${server.port}`));

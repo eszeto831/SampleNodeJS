@@ -14,7 +14,13 @@ router.get('/', function(req, res) {
 router.get('/list', function(req, res) {
   let sql = `SELECT * FROM Users`;
   db.query(sql, function(err, data, fields) {
-    if (err) throw err;
+    if (err)
+    {
+      res.json({
+        status: 200,
+        message: "Error: "+err.message+" "+err.json
+      })
+    }
     res.json({
       status: 200,
       data,

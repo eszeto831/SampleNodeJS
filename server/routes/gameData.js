@@ -5,14 +5,14 @@ const express = require('express'),
 router.get('/', function(req, res) {
   res.json({
       status: 200,
-      message: "User api"
+      message: "GameData api"
     })
 });
 
 
 // get user lists
-router.get('/list', function(req, res) {
-  let sql = `SELECT * FROM Users`;
+router.get('/:userId', function(req, res) {
+  let sql = `SELECT * FROM GameData WHERE userid=`+req.params.userId;
   db.query(sql, function(err, data, fields) {
     if (err)
     {
@@ -25,7 +25,7 @@ router.get('/list', function(req, res) {
     res.json({
       status: 200,
       data,
-      message: "User lists retrieved successfully",
+      message: "User game data retrieved successfully",
       error:false
     })
   })

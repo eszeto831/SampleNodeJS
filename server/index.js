@@ -25,10 +25,12 @@ app.get("/api", (req, res) => {
 
 // routers
 const usersRouter = require('./routes/users');
+const gameDataRouter = require('./routes/gameData');
 // use the modules
 app.use(cors())
 app.use(bodyParser.json());
 // use router
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/gameData', gameDataRouter);
 
 app.listen( server.port , () => console.log(`Server started, listening on port: ${server.port}`));

@@ -3,6 +3,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import GameDataItem from "./components/GameDataItem.js"
+import UserListItem from "./components/UserListItem.js"
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -16,7 +18,41 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="gameDataGridDisplayDiv">
+          <div className="scrollListDiv">
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          <UserListItem/>
+          </div>
+          <GameDataItem/>
+        </div>
         <p>{!data ? "Loading..." : data}</p>
       </header>
     </div>

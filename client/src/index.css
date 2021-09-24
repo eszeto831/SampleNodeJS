@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div.scrollListDiv {
+  background-color: lightblue;
+  overflow: auto;
+}
+
+div.gameDataItemDiv {
+  background-color: lightblue;
+  overflow: auto;
+}
+
+div.gameDataGridDisplayDiv {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-gap: 20px;
+    height: 300px;
+    padding: 20px;
+}
